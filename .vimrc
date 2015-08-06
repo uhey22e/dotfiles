@@ -8,13 +8,17 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'Shougo/unite.vim'
+
 " color scheme
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'tomasr/molokai'
 
+" syntac
 NeoBundle "sudar/vim-arduino-syntax"
 
+" comment out
 NeoBundle "tyru/caw.vim.git"
 nmap <C-K> <Plug>(caw:i:toggle)
 vmap <C-K> <Plug>(caw:i:toggle)
