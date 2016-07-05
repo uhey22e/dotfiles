@@ -33,6 +33,9 @@ NeoBundle 'nanotech/jellybeans.vim'
 " Powerline
 NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
 
+" GitGutter
+NeoBundle 'airblade/vim-gitgutter'
+
 " For React.js
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
@@ -40,7 +43,7 @@ let g:jsx_ext_required = 0
 
 " Other
 NeoBundle 'cohama/lexima.vim'
-let g:lexima_enable_basic_rules = 1
+let g:lexima_enable_default_rules = 1
 
 call neobundle#end()
 
@@ -85,3 +88,4 @@ set directory=/tmp
 set wildignorecase
 set wildmode=list,full
 
+" plugin settings
