@@ -21,12 +21,26 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Unite Vim
 NeoBundle 'Shougo/unite.vim'
+nnoremap <silent> ;ub :Unite buffer<CR>
+
+" NERD Tree
+NeoBundle 'scrooloose/nerdtree'
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 " Color Schemes
 NeoBundle 'nanotech/jellybeans.vim'
 
+" Powerline
+NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
+
+" For React.js
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+
 " Other
 NeoBundle 'cohama/lexima.vim'
+let g:lexima_enable_basic_rules = 1
 
 call neobundle#end()
 
@@ -40,11 +54,11 @@ NeoBundleCheck
 " basic settings
 set backspace=2
 set number
-set ruler
 set list
-set list listchars=tab:\▸\-
+set list listchars=tab:\▸\-,trail:-
 set paste
 set clipboard=unnamedplus
+set laststatus=2
 
 " search settings
 set ignorecase
@@ -56,12 +70,18 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " tab settings
 set autoindent
-set tabstop=4
+set expandtab
+set ts=4
+set softtabstop=4
 set shiftwidth=4
 
 " color scheme
 colorscheme jellybeans
 
-let g:lexima_no_default_rules = 1
-call lexima#set_default_rules()
+" swap file setting
+set directory=/tmp
+
+" command complete setting
+set wildignorecase
+set wildmode=list,full
 
