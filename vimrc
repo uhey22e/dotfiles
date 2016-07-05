@@ -22,11 +22,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Unite Vim
 NeoBundle 'Shougo/unite.vim'
 
-" Smart Input
-NeoBundle "kana/vim-smartinput"
-
 " Color Schemes
 NeoBundle 'nanotech/jellybeans.vim'
+
+" Other
+NeoBundle 'cohama/lexima.vim'
 
 call neobundle#end()
 
@@ -44,6 +44,7 @@ set ruler
 set list
 set list listchars=tab:\▸\-
 set paste
+set clipboard=unnamedplus
 
 " search settings
 set ignorecase
@@ -60,4 +61,7 @@ set shiftwidth=4
 
 " color scheme
 colorscheme jellybeans
+
+let g:lexima_no_default_rules = 1
+call lexima#set_default_rules()
 
