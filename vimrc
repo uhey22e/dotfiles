@@ -23,11 +23,8 @@ NeoBundle 'Shougo/unite.vim'
 
 " color scheme
 NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'jonathanfilip/vim-lucius'
-NeoBundle 'tomasr/molokai'
-
-" arduino syntax
-NeoBundle "sudar/vim-arduino-syntax"
+" NeoBundle 'jonathanfilip/vim-lucius'
+" NeoBundle 'tomasr/molokai'
 
 " comment out
 NeoBundle "tyru/caw.vim.git"
@@ -58,7 +55,7 @@ set clipboard=unnamed,autoselect
 " colorscheme hybrid 
 " colorscheme desert
 " colorscheme elflord
-colorscheme molokai
+" colorscheme molokai
 
 set t_Co=256
 
