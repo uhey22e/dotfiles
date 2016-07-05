@@ -2,7 +2,7 @@
 if 0 | endif
 
 if &compatible
-	set nocompatible               " Be iMproved
+  set nocompatible               " Be iMproved
 endif
 
 " Required:
@@ -19,22 +19,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
+" Unite Vim
 NeoBundle 'Shougo/unite.vim'
 
-" color scheme
-NeoBundle 'w0ng/vim-hybrid'
-" NeoBundle 'jonathanfilip/vim-lucius'
-" NeoBundle 'tomasr/molokai'
+" Smart Input
+NeoBundle "kana/vim-smartinput"
 
-" comment out
-NeoBundle "tyru/caw.vim.git"
-nmap <C-K> <Plug>(caw:i:toggle)
-vmap <C-K> <Plug>(caw:i:toggle)
-
-" インデントに色を付けて見やすくする
-" NeoBundle 'nathanaelkane/vim-indent-guides'
-" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-" let g:indent_guides_enable_on_vim_startup = 1
+" Color Schemes
+NeoBundle 'nanotech/jellybeans.vim'
 
 call neobundle#end()
 
@@ -45,27 +37,27 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-" End Neo Bundle Settings
-
-syntax enable
+" basic settings
+set backspace=2
 set number
 set ruler
-set clipboard=unnamed,autoselect
+set list
+set list listchars=tab:\▸\-
+set paste
 
-" colorscheme hybrid 
-" colorscheme desert
-" colorscheme elflord
-" colorscheme molokai
+" search settings
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+set hlsearch
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-set t_Co=256
-
-"autocmd BufNewFile,BufReadPost *.ino set filetype=cpp
-
-set backspace=indent,eol,start
-
-" Tab Settings
+" tab settings
+set autoindent
 set tabstop=4
 set shiftwidth=4
-set autoindent
 
-filetype on
+" color scheme
+colorscheme jellybeans
+
