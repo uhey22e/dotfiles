@@ -27,23 +27,23 @@ nnoremap <silent> ;ub :Unite buffer<CR>
 NeoBundle 'scrooloose/nerdtree'
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
-" Color Schemes
-NeoBundle 'nanotech/jellybeans.vim'
-
 " Powerline
 NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
 
 " GitGutter
 NeoBundle 'airblade/vim-gitgutter'
 
+" lexima
+NeoBundle 'cohama/lexima.vim'
+
 " For React.js
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 
-" Other
-NeoBundle 'cohama/lexima.vim'
-let g:lexima_enable_default_rules = 1
+" Color Schemes
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'w0ng/vim-hybrid'
 
 call neobundle#end()
 
@@ -54,14 +54,26 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
+" colorscheme
+set background=dark
+colorscheme jellybeans
+
 " basic settings
 set backspace=2
 set number
 set list
 set list listchars=tab:\▸\-,trail:-
 set paste
-set clipboard=unnamedplus
 set laststatus=2
+set clipboard+=unnamedplus,unnamed
+syntax on
+
+" tab settings
+set autoindent
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " search settings
 set ignorecase
@@ -71,21 +83,14 @@ set wrapscan
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-" tab settings
-set autoindent
-set expandtab
-set ts=4
-set softtabstop=4
-set shiftwidth=4
-
-" color scheme
-colorscheme jellybeans
-
-" swap file setting
-set directory=/tmp
-
 " command complete setting
 set wildignorecase
 set wildmode=list,full
 
-" plugin settings
+" key bindings
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+
+let g:lexima_no_default_rules = 1
+call lexima#set_default_rules()
+
