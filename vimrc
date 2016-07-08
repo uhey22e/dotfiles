@@ -132,6 +132,10 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "Basic Settings w/o plugin-------------------
 
+" colorscheme
+set background=dark
+colorscheme jellybeans
+
 " basic settings
 set backspace=2
 set number
@@ -140,6 +144,14 @@ set list listchars=tab:\▸\-,trail:-
 set paste
 set clipboard+=unnamedplus,unnamed
 set laststatus=2
+syntax on
+
+" tab settings
+set autoindent
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " search settings
 set ignorecase
@@ -160,7 +172,9 @@ set smartindent
 colorscheme jellybeans
 
 " swap file setting
-set directory=/tmp
+if (has('unix'))
+  set directory=/tmp
+endif
 
 " command complete setting
 set wildignorecase
