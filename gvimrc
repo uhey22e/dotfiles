@@ -5,6 +5,6 @@ elseif ( has('unix') )
 	set guifont=Ricty\ for\ Powerline\ 11
 endif
 
-colorscheme hybrid
+colorscheme jellybeans
 set background=dark
 

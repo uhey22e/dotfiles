@@ -4,10 +4,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('.vim/dein'))
+call dein#begin(expand('~/.vim/dein'))
 
 " Let dein manage dein
 " Required:
@@ -33,6 +33,11 @@ call dein#add('tpope/vim-surround')
 
 " GitGutter
 call dein#add('airblade/vim-gitgutter')
+
+" For React.js
+call dein#add('pangloss/vim-javascript')
+call dein#add('mxw/vim-jsx')
+let g:jsx_ext_required = 0
 
 " Color Schemes
 call dein#add('nanotech/jellybeans.vim')
