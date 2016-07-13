@@ -31,6 +31,59 @@ nnoremap <silent> <F3> :NERDTreeToggle<CR>
 " surround.vim
 call dein#add('tpope/vim-surround')
 
+" lexima.vim
+call dein#add('cohama/lexima.vim')
+
+" lightline.vim
+call dein#add('itchyny/lightline.vim')
+let g:lightline = {
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'colorscheme': 'jellybeans',
+    \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
+    \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
+    \ 'component_function': {
+    \   'fugitive': 'LightLineFugitive',
+    \   'readonly': 'LightLineReadonly',
+    \   'modified': 'LightLineModified'
+    \ }
+    \ }
+
+function! LightLineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "⭤"
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineFugitive()
+    if exists("*fugitive#head")
+        let branch = fugitive#head()
+        return branch !=# '' ? '⭠ '.branch : ''
+    endif
+    return ''
+endfunction
+
+" fugitive.vim
+call dein#add('tpope/vim-fugitive')
+
 " GitGutter
 call dein#add('airblade/vim-gitgutter')
 
@@ -43,7 +96,8 @@ let g:jsx_ext_required = 0
 call dein#add('nanotech/jellybeans.vim')
 
 " You can specify revision/branch/tag.
-call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+" call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+call dein#add('Shougo/vimshell')
 
 " Required:
 call dein#end()
@@ -90,7 +144,7 @@ inoremap <expr><C-l> neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
@@ -146,10 +200,13 @@ set backspace=2
 set number
 set list
 set list listchars=tab:\▸\-,trail:-
-set paste
 set clipboard+=unnamedplus,unnamed
 set laststatus=2
 syntax on
+
+if !has( 'gui_running' )
+    set t_Co=256
+endif
 
 " tab settings
 set autoindent
