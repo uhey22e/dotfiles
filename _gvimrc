@@ -8,7 +8,8 @@ set lsp=2
 " 外観設定
 "
 " color scheme
-colorscheme molokai
+set background=dark
+colorscheme hybrid
 
 " other
 set number
@@ -24,3 +25,8 @@ set columns=120
 set lines=40
 " コマンドラインの高さ(GUI使用時)
 set cmdheight=2
+
+if (has('windows'))
+  execute ":cd $HOME"
+  execute ":NERDTree $HOME"
+endif

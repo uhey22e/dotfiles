@@ -50,14 +50,12 @@ NeoBundle 'tomasr/molokai'
 
 " lightline.vim
 NeoBundle 'itchyny/lightline.vim'
+let g:lightline = {
+  \ 'colorscheme': 'jellybeans'
+  \ }
 
 " syntax
 NeoBundle "sudar/vim-arduino-syntax"
-
-" comment out
-NeoBundle "tyru/caw.vim.git"
-nmap <C-K> <Plug>(caw:i:toggle)
-vmap <C-K> <Plug>(caw:i:toggle)
 
 NeoBundle 'istepura/vim-toolbar-icons-silk'
 
@@ -74,6 +72,9 @@ NeoBundleCheck
 
 " colorscheme
 set background=dark
+if !has( 'gui_running' )
+    set t_Co=256
+endif
 
 " basic settings
 set backspace=2
@@ -84,10 +85,6 @@ set clipboard+=unnamedplus,unnamed
 set laststatus=2
 syntax on
 
-if !has( 'gui_running' )
-    set t_Co=256
-endif
-
 " tab settings
 set expandtab
 set tabstop=2
@@ -95,6 +92,10 @@ set softtabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
+
+" encodings
+set fenc=utf-8
+set ff=unix
 
 " key bindings
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
