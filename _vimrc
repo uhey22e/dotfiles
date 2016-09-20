@@ -36,36 +36,20 @@ let g:neocomplete#enable_fuzzy_completion         = 1
 let g:neocomplete#lock_buffer_name_pattern        = '\*ku\*'
 " }}}
 
-NeoBundleLazy 'Shougo/vimshell', {
-  \ 'depends' : 'Shougo/vimproc',
-  \ 'autoload' : {
-  \   'commands' : [{ 'name' : 'VimShell', 'complete' : 'customlist,vimshell#complete'},
-  \                 'VimShellExecute', 'VimShellInteractive',
-  \                 'VimShellTerminal', 'VimShellPop'],
-  \   'mappings' : ['<Plug>(vimshell_switch)']
-  \ }}
+" NERD Tree
+NeoBundle 'scrooloose/nerdtree'
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
-" vimshell {{{
-nmap <silent> vs :<C-u>VimShell<CR>
-nmap <silent> vp :<C-u>VimShellPop<CR>
-" }}}
-
-NeoBundle 'Shougo/vimfiler.vim'
+" surround.vim
+NeoBundle 'tpope/vim-surround'
 
 " color scheme
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'tomasr/molokai'
 
-" indent-guides
-NeoBundle 'nathanaelkane/vim-indent-guides' 
-
-" vim-indent-guides
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_auto_colors=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=110
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=140
-let g:indent_guides_guide_size=1
+" lightline.vim
+NeoBundle 'itchyny/lightline.vim'
 
 " syntax
 NeoBundle "sudar/vim-arduino-syntax"
@@ -76,19 +60,6 @@ nmap <C-K> <Plug>(caw:i:toggle)
 vmap <C-K> <Plug>(caw:i:toggle)
 
 NeoBundle 'istepura/vim-toolbar-icons-silk'
-
-" Setting of processing
-" NeoBundleLazy 'sophacles/vim-processing'
-" augroup Processing
-"     autocmd!
-"     autocmd BufNewFile *.pde NeoBundleSource vim-processing
-"     autocmd BufRead    *.pde NeoBundleSource vim-processing
-" augroup END
-
-" インデントに色を付けて見やすくする
-" NeoBundle 'nathanaelkane/vim-indent-guides'
-" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-" let g:indent_guides_enable_on_vim_startup = 1
 
 call neobundle#end()
 
@@ -101,27 +72,32 @@ NeoBundleCheck
 " End Neo Bundle Settings
 "------------------------------------------
 
-set runtimepath+=~/.vim/minimap-vim/
+" colorscheme
+set background=dark
 
-syntax enable
-" set number
-set ruler
-set clipboard=unnamed,autoselect
+" basic settings
+set backspace=2
+set number
+set list
+set list listchars=tab:\>-,trail:-
+set clipboard+=unnamedplus,unnamed
+set laststatus=2
+syntax on
 
-" colorscheme hybrid 
-" colorscheme desert
-" colorscheme elflord
-" colorscheme molokai
+if !has( 'gui_running' )
+    set t_Co=256
+endif
 
-set t_Co=256
-
-"autocmd BufNewFile,BufReadPost *.ino set filetype=cpp
-
-set backspace=indent,eol,start
-
-" Tab Settings
-set tabstop=4
-set shiftwidth=4
+" tab settings
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set autoindent
+set smartindent
 
-filetype on
+" key bindings
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+

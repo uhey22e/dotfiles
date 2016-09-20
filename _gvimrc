@@ -24,10 +24,3 @@ set columns=120
 set lines=40
 " コマンドラインの高さ(GUI使用時)
 set cmdheight=2
-
-"---------------------------------------------------------------------------
-" Tab Settings
-
-set tabstop=4
-set shiftwidth=4
-set autoindent
