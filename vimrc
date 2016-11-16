@@ -42,8 +42,6 @@ let g:lightline = {
     \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
     \ },
     \ 'colorscheme': 'jellybeans',
-    \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
-    \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
     \ 'component_function': {
     \   'fugitive': 'LightLineFugitive',
     \   'readonly': 'LightLineReadonly',
@@ -67,7 +65,7 @@ function! LightLineReadonly()
   if &filetype == "help"
     return ""
   elseif &readonly
-    return "⭤"
+    return ""
   else
     return ""
   endif
@@ -76,7 +74,7 @@ endfunction
 function! LightLineFugitive()
     if exists("*fugitive#head")
         let branch = fugitive#head()
-        return branch !=# '' ? '⭠ '.branch : ''
+        return branch !=# '' ? ''.branch : ''
     endif
     return ''
 endfunction
@@ -210,6 +208,7 @@ endif
 
 " tab settings
 set autoindent
+set smartindent
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -221,17 +220,6 @@ set smartcase
 set incsearch
 set wrapscan
 set hlsearch
-
-" tab settings
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set autoindent
-set smartindent
-
-" color scheme
-colorscheme jellybeans
 
 " swap file setting
 if (has('unix'))
