@@ -90,6 +90,9 @@ call dein#add('pangloss/vim-javascript')
 call dein#add('mxw/vim-jsx')
 let g:jsx_ext_required = 0
 
+" For pug (jade)
+call dein#add('digitaltoad/vim-pug')
+
 " Color Schemes
 call dein#add('nanotech/jellybeans.vim')
 
