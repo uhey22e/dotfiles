@@ -9,7 +9,7 @@ colors
 PROMPT='[%F{green}%n@%m%f]%# '
 RPROMPT='%F{cyan}[%~]%f'
 
-#アライアス
+#alias
 alias ls='ls -G'
 alias la='ls -aG'
 alias ll='ls -lG'
