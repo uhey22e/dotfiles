@@ -87,8 +87,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 nnoremap <F3> :NERDTreeToggle<CR>
-nnoremap <silent> <space>uf :Unite file<CR>
-nnoremap <silent> <space>ub :Unite buffer<CR>
 
 set autoread
 augroup vimrc-checktime
@@ -107,6 +105,16 @@ let g:jellybeans_overrides = {
 colorscheme jellybeans
 
 "End Jellybeans settings------------------
+
+
+"Unite settings---------------------------
+
+nmap <space> [unite]
+nnoremap <silent> [unite]f :Unite file<CR>
+nnoremap <silent> [unite]b :Unite buffer<CR>
+nnoremap <silent> [unite]h :Unite<Space>history/yank<CR>
+
+"End Unite settings-----------------------
 
 
 "NERD Commenter settings------------------
