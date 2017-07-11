@@ -30,13 +30,6 @@ if dein#load_state(s:dein_dir)
 
   call dein#load_toml(s:toml, {'lazy': 0})
 
-  " Add or remove your plugins here:
-  " call dein#add('Shougo/neosnippet.vim')
-  " call dein#add('Shougo/neosnippet-snippets')
-
-  " You can specify revision/branch/tag.
-  " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
   " Required:
   call dein#end()
   call dein#save_state()
@@ -54,12 +47,6 @@ endif
 "End dein Scripts-------------------------
 
 
-"lightline settings-----------------------
-
-let g:lightline = { 'colorscheme': 'solarized' }
-
-"End lightline settings-------------------
-
 
 "Basic settings---------------------------
 
@@ -69,14 +56,12 @@ set laststatus=2
 if !has('gui_running')
   set t_Co=256
 endif
-colorscheme apprentice
 
 " basic settings
 set backspace=2
 set number
 set list listchars=tab:\>\-,trail:-
 set clipboard+=unnamedplus,unnamed
-set laststatus=2
 
 " tab settings
 set autoindent
@@ -102,8 +87,8 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 nnoremap <F3> :NERDTreeToggle<CR>
-nnoremap <silent> ;uf :Unite file<CR>
-nnoremap <silent> ;ub :Unite buffer<CR>
+nnoremap <silent> <space>uf :Unite file<CR>
+nnoremap <silent> <space>ub :Unite buffer<CR>
 
 set autoread
 augroup vimrc-checktime
@@ -112,4 +97,30 @@ augroup vimrc-checktime
 augroup END
 
 "End Basic settings-----------------------
+
+
+"Jellybeans settings----------------------
+
+let g:jellybeans_overrides = {
+\   'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+\}
+colorscheme jellybeans
+
+"End Jellybeans settings------------------
+
+
+"NERD Commenter settings------------------
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+"End NERD Commenter settings--------------
+
+
+"lightline settings-----------------------
+
+set laststatus=2
+let g:lightline = { 'colorscheme': 'jellybeans' }
+
+"End lightline settings-------------------
 
