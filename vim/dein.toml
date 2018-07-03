@@ -19,6 +19,12 @@ repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
 
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+
+[[plugins]]
+repo = 'mtscout6/syntastic-local-eslint.vim'
+
 # colorscheme
 [[plugins]]
 repo = 'altercation/vim-colors-solarized'

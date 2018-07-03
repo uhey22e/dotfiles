@@ -134,3 +134,9 @@ let g:lightline = { 'colorscheme': 'jellybeans' }
 
 "End lightline settings-------------------
 
+"Syntastic settings-----------------------
+if filereadable(expand('~/.vim/syntastic.vim'))
+  source ~/.vim/syntastic.vim
+endif
+"End syntastic settings-------------------
+
