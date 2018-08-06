@@ -1,0 +1,50 @@
+#
+# general
+#
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+
+#
+# completion
+#
+
+[[plugins]]
+repo     = 'Shougo/deoplete.nvim'
+hook_add = 'let g:deoplete#enable_at_startup = 1'
+
+#
+# ui
+#
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+#
+# git
+#
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+

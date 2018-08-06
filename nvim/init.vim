@@ -5,11 +5,11 @@ endif
 
 " Required:
 if has('unix')
-  let s:dein_dir = expand('~/.cache/dein')
+  let s:dein_dir      = expand('~/.cache/dein')
   let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 else
   " for windows
-  let s:dein_dir = expand('~\.cache\dein')
+  let s:dein_dir      = expand('~\.cache\dein')
   let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
 endif
 execute 'set runtimepath+=' . s:dein_repo_dir
@@ -23,11 +23,11 @@ if dein#load_state(s:dein_dir)
   call dein#add(s:dein_repo_dir)
 
   if has('unix')
-    let g:rc_dir = expand('~/.vim')
+    let g:rc_dir = expand('~/.config/nvim')
   else
     let g:rc_dir = expand('~/vimfiles')
   endif
-  let s:toml = g:rc_dir . '/dein.toml'
+  let s:toml      = g:rc_dir . '/dein.toml'
   let s:toml_lazy = g:rc_dir . '/dein-lazy.toml'
 
   call dein#load_toml(s:toml, {'lazy': 0})
@@ -89,7 +89,7 @@ set wildmode=list,full
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
-nnoremap <F3> :NERDTreeToggle<CR>
+let mapleader = "\<Space>"
 
 set autoread
 augroup vimrc-checktime
@@ -112,43 +112,13 @@ colorscheme jellybeans
 
 "Unite settings---------------------------
 
-nmap <space> [unite]
-nnoremap <silent> [unite]f :Unite file<CR>
-nnoremap <silent> [unite]b :Unite buffer<CR>
-nnoremap <silent> [unite]h :Unite<Space>history/yank<CR>
+" nmap <space> [unite]
+nnoremap <silent> <leader>f :Unite file<CR>
+nnoremap <silent> <leader>b :Unite buffer<CR>
+nnoremap <silent> <leader>h :Unite<Space>history/yank<CR>
 
 "End Unite settings-----------------------
 
 
-"NERD Commenter settings------------------
-
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-"End NERD Commenter settings--------------
-
-
-"lightline settings-----------------------
-
-set laststatus=2
-let g:lightline = { 'colorscheme': 'jellybeans' }
-
-"End lightline settings-------------------
-
-"Syntastic settings-----------------------
-
-if filereadable(expand('~/.vim/syntastic.vim'))
- source ~/.vim/syntastic.vim
-endif
-
-"End syntastic settings-------------------
-
-
-"vim-easy-align settings------------------
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-"End vim-easy-align settings--------------
-
+runtime! config/*.vim
 
