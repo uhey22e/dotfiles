@@ -1,6 +1,7 @@
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
+depends = ['neosnippet']
 hook_source = '''
     let g:go_metalinter_enabled = ['golint', 'vet', 'errcheck']
     let g:go_metalinter_autosave = 1
@@ -8,7 +9,7 @@ hook_source = '''
     let g:go_highlight_fields = 1
     let g:go_highlight_functions = 1
     let g:go_highlight_methods = 1
-    set completeopt-=preview
+    let g:go_snippet_engine = "neosnippet"
 '''
 
 [[plugins]]
@@ -24,3 +25,17 @@ hook_source = '''
 repo = 'mxw/vim-jsx'
 on_ft = 'javascript'
 
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+hook_source = '''
+  imap <C-k> <Plug>(neosnippet_expand_or_jump)
+  smap <C-k> <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k> <Plug>(neosnippet_expand_target)
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
+'''
+on_i  = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
