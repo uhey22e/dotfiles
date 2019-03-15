@@ -119,6 +119,9 @@ nnoremap <silent> <leader>h :Unite<Space>history/yank<CR>
 
 "End Unite settings-----------------------
 
+"toml------------------------------------
+autocmd BufRead,BufNewFile *.toml setfiletype toml
+"end toml--------------------------------
 
 runtime! config/*.vim
 
