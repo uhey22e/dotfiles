@@ -43,3 +43,7 @@ depends = ['neosnippet-snippets']
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
+[[plugins]]
+repo = 'deoplete-plugins/deoplete-jedi'
+on_i = 1
+on_ft = 'python'
