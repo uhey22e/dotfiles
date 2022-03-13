@@ -1,2 +1,2 @@
 let mapleader = "\<Space>"
-nnoremap <silent> <leader>f :Fern .<CR>
+nnoremap <silent> <leader>f :Fern . -reveal=%<CR>

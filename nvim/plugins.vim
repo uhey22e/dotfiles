@@ -11,4 +11,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'lambdalisue/fern.vim'
 
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
