@@ -1,5 +1,11 @@
 # dotfiles
 
+Clone this repository.
+
+```sh
+git clone https://github.com/uhey22e/dotfiles.git ~/dotfiles
+```
+
 ## zsh
 
 First, install [sheldon](https://github.com/rossmacarthur/sheldon).
@@ -22,5 +28,13 @@ Add configurations in `~/.config/nvim/init.vim`.
 for file in split(glob("~/dotfiles/nvim/". "**/*.vim"))
     execute 'source' file
 endfor
+```
+
+## tmux
+
+Make symlink in home directory.
+
+```sh
+ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 ```
 
