@@ -8,19 +8,24 @@ git clone https://github.com/uhey22e/dotfiles.git ~/dotfiles
 
 ## zsh
 
-First, install [sheldon](https://github.com/rossmacarthur/sheldon).
+**Prerequisites**
 
-Add configurations in `~/.sheldon/plugins.toml`.
+- [sheldon](https://github.com/rossmacarthur/sheldon)
 
-```toml
-[plugins.dotfiles]
-local = "~/dotfiles/zsh"
-use = ["{aliases,history}.zsh"]
+**Installation**
+
+```sh
+ln -sf ~/dotfiles/zsh/sheldon.plugins.toml ~/.sheldon/plugins.toml
+source ~/.zshrc
 ```
 
 ## neovim
 
-First, install [vim-plug](https://github.com/junegunn/vim-plug).
+**Prerequisites**
+
+- [vim-plug](https://github.com/junegunn/vim-plug)
+
+**Installation**
 
 Add configurations in `~/.config/nvim/init.vim`.
 
