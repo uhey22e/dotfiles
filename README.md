@@ -40,6 +40,6 @@ endfor
 Make symlink in home directory.
 
 ```sh
-ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/tmux/tmux.conf ~/.config/tmux/tmux.conf
 ```
 

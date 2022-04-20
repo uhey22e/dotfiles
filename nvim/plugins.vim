@@ -5,6 +5,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/vim-easy-align'
 
 " Neovim users SHOULD add antoinemadec/FixCursorHold.nvim for now
 " https://github.com/lambdalisue/fern.vim/issues/120

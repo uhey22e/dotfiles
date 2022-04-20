@@ -48,7 +48,13 @@ apply = ["defer"]
 [plugins.aws_zsh_completer]
 remote = "https://raw.githubusercontent.com/aws/aws-cli/v2/bin/aws_zsh_completer.sh"
 
+[plugins.gcloud_zsh_completion]
+inline = 'source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"'
+
 [plugins.dotfiles]
 local = "~/dotfiles/zsh"
 use = ["{aliases,history}.zsh"]
+
+[plugins.rbenv]
+inline = 'eval "$(rbenv init - zsh)"'
 
